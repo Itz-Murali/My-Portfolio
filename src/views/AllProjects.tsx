@@ -6,9 +6,9 @@ import AnimatedBackground from '@/core/effects/AnimatedBackground';
 
 const allProjects = [
   {
-    title: 'Chiku AI Bot',
+    title: 'Chiku AI Telegram Bot',
     description: 'Meet Chiku AI Bot – your smart and feature-packed AI assistant, now available on Telegram! From answering questions to providing useful tools.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'TypeScript'],
+    tags: ['Typescript', 'HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://t.me/ChikuAiBot',
     sourceUrl: 'https://github.com/itz-Murali/Chiku-Ai',
     isPrivate: false,
@@ -26,11 +26,20 @@ const allProjects = [
   {
     title: 'Journey Of Professor Eevee',
     description: 'Discover the magical journey of Professor Eevee and his mysterious companion Euvee. Uncover hidden secrets, explore unknown lands, and witness powerful evolutions.',
-    tags: ['Python', 'HTML', 'CSS', 'JS'],
+    tags: ['HTML', 'CSS', 'JS'],
     liveUrl: 'https://journey-of-professor-eevee.vercel.app',
     sourceUrl: 'https://github.com/Itz-Murali/Journey-Of-Professor-Eevee',
     isPrivate: false,
     image: 'https://files.catbox.moe/yrzw5t.jpg',
+  },
+  {
+    title: 'Chiku Web Ai',
+    description: 'An Advanced Ai Chatbot With Image generation, text to speech, nekos gallery and lot of more features, Made With Using Vite .',
+    tags: ['Typescript', 'HTML', 'CSS', 'JS'],
+    liveUrl: 'https://Chiku-ai.vercel.app',
+    sourceUrl: 'https://github.com/Itz-Murali/Chiku',
+    isPrivate: false,
+    image: 'https://files.catbox.moe/f6kl8n.jpeg',
   },
   {
     title: 'Music Player Website',
@@ -75,12 +84,12 @@ const allProjects = [
     liveUrl: 'https://itz-murali.github.io/Suzume/',
     sourceUrl: 'https://github.com/Itz-Murali/Suzume',
     isPrivate: false,
-    image: 'https://files.catbox.moe/q272sr.jpeg',
+    image: 'https://files.catbox.moe/guf2o8.jpeg',
   },
   {
     title: 'Pokedex Website',
     description: 'Your gateway to the world of Pokémon! Search and explore detailed information about your favorite Pokémon.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    tags: ['HTML', 'CSS', 'Typescript'],
     liveUrl: 'https://trainerdex.vercel.app',
     sourceUrl: 'https://github.com/Itz-Murali/Pokedex',
     isPrivate: false,
