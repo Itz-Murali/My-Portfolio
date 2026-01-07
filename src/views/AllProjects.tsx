@@ -69,15 +69,6 @@ const allProjects = [
     image: 'https://files.catbox.moe/qd9cvb.jpeg',
   },
   {
-    title: 'Instagram Video Downloader',
-    description: 'Download your favorite Instagram Reels quickly and easily! Save high-quality Reels effortlessly.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://itz-murali.github.io/Insta/',
-    sourceUrl: 'https://github.com/Itz-Murali/Insta',
-    isPrivate: false,
-    image: 'https://files.catbox.moe/jcal9b.jpeg',
-  },
-  {
     title: 'Suzume Movie Fan Page',
     description: 'A tribute to Makoto Shinkai\'s breathtaking masterpiece, celebrating the beauty, emotion, and adventure of Suzume no Tojimari.',
     tags: ['HTML', 'CSS', 'JavaScript'],
