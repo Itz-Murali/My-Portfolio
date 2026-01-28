@@ -48,7 +48,7 @@ const allProjects = [
     liveUrl: 'https://Chiku-music.vercel.app/',
     sourceUrl: '',
     isPrivate: true,
-    image: 'https://files.catbox.moe/xeb0tr.png',
+    image: 'https://files.catbox.moe/ntdxvn.jpg',
   },
   {
     title: 'Image Generator Website',
