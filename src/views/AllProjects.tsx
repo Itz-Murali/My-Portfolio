@@ -12,7 +12,7 @@ const allProjects = [
     liveUrl: 'https://t.me/ChikuAiBot',
     sourceUrl: 'https://github.com/itz-Murali/Chiku-Ai',
     isPrivate: false,
-    image: 'https://files.catbox.moe/wzaigp.jpg',
+    image: 'https://files.catbox.moe/l6jaaq.jpg',
   },
   {
     title: 'Elaina AI ChatBot',
