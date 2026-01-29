@@ -66,7 +66,7 @@ const allProjects = [
     liveUrl: 'https://itz-murali.github.io/Neko/',
     sourceUrl: 'https://github.com/Itz-Murali/Neko',
     isPrivate: false,
-    image: 'https://files.catbox.moe/qd9cvb.jpeg',
+    image: 'https://files.catbox.moe/b8f9zj.jpg',
   },
   {
     title: 'Suzume Movie Fan Page',
@@ -75,7 +75,7 @@ const allProjects = [
     liveUrl: 'https://itz-murali.github.io/Suzume/',
     sourceUrl: 'https://github.com/Itz-Murali/Suzume',
     isPrivate: false,
-    image: 'https://files.catbox.moe/guf2o8.jpeg',
+    image: 'https://files.catbox.moe/s8gidm.jpg',
   },
   {
     title: 'Pokedex Website',
