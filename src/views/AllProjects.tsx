@@ -39,7 +39,7 @@ const allProjects = [
     liveUrl: 'https://Chiku-ai.vercel.app',
     sourceUrl: 'https://github.com/Itz-Murali/Chiku',
     isPrivate: false,
-    image: 'https://files.catbox.moe/f6kl8n.jpeg',
+    image: 'https://files.catbox.moe/f3kvmj.jpg',
   },
   {
     title: 'Chiku Music',
