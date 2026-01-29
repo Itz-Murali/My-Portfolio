@@ -21,7 +21,7 @@ const allProjects = [
     liveUrl: 'https://t.me/ElainaOpBot',
     sourceUrl: 'https://github.com/Itz-Murali/Elaina-Ai',
     isPrivate: false,
-    image: 'https://files.catbox.moe/d36xdi.jpeg',
+    image: 'https://files.catbox.moe/bhvr1n.jpg',
   },
   {
     title: 'Journey Of Professor Eevee',
@@ -57,7 +57,7 @@ const allProjects = [
     liveUrl: 'https://itz-murali.github.io/Image-Gen/',
     sourceUrl: 'https://github.com/Itz-Murali/Image-Gen',
     isPrivate: false,
-    image: 'https://files.catbox.moe/e4v7uu.jpeg',
+    image: 'https://files.catbox.moe/buojk2.jpg',
   },
   {
     title: 'Neko Image Generator',
@@ -84,7 +84,7 @@ const allProjects = [
     liveUrl: 'https://trainerdex.vercel.app',
     sourceUrl: 'https://github.com/Itz-Murali/Pokedex',
     isPrivate: false,
-    image: 'https://files.catbox.moe/43t6uy.png',
+    image: 'https://files.catbox.moe/bfmos4.jpg',
   },
 ];
 
