@@ -2,11 +2,11 @@ import { Mail, Github, Send, Instagram, Code } from 'lucide-react';
 import useScrollAnimation from '@/utils/hooks/useScrollAnimation';
 
 const socialLinks = [
-  { name: 'Telegram', icon: Send, url: 'https://t.me/MysticSyntax', color: '#0088cc' },
-  { name: 'Email', icon: Mail, url: 'mailto:muralimurali3211260@gmail.com', color: '#ea4335' },
+  { name: 'Telegram', icon: Send, url: 'https://t.me/ChikuBots', color: '#0088cc' },
+  { name: 'Email', icon: Mail, url: 'mailto:Itz-Murali@outlook.com', color: '#ea4335' },
   { name: 'GitHub', icon: Github, url: 'https://github.com/Itz-Murali', color: '#6e5494' },
   { name: 'CodePen', icon: Code, url: 'https://codepen.io/MysticalDevs', color: '#47cf73' },
-  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/Anime.Coderz', color: '#E1306C' },
+  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/Murali.Techno', color: '#E1306C' },
 ];
 
 const ContactSection = () => {
