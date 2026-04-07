@@ -6,6 +6,15 @@ import AnimatedBackground from '@/core/effects/AnimatedBackground';
 
 const allProjects = [
   {
+    title: 'Sylveon Music Bot',
+    description: 'Turn your Telegram group into a live music room where everyone listens together perfectly synced, smooth, and immersive. Experience a new era of enjoying music with friends in real-time with cool ai agent features',
+    tags: ['Typescript', 'Supabase', 'Ai', 'SQL'],
+    liveUrl: 'https://t.me/SylveonMusicBot',
+    sourceUrl: '',
+    isPrivate: true,
+    image: 'https://files.catbox.moe/r9lawy.jpg',
+  },
+  {
     title: 'Chiku AI Telegram Bot',
     description: 'Meet Chiku AI Bot – your smart and feature-packed AI assistant, now available on Telegram! From answering questions to providing useful tools.',
     tags: ['Typescript', 'HTML', 'CSS', 'JavaScript'],
