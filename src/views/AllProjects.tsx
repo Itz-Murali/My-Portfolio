@@ -86,6 +86,78 @@ const allProjects = [
     isPrivate: false,
     image: 'https://files.catbox.moe/bfmos4.jpg',
   },
+  {
+    title: 'Weather App',
+    description: 'A modern weather platform with accurate, real-time forecasts and a smooth, elegant interface.',
+    tags: ['TypeScript', 'API', 'UI'],
+    liveUrl: 'https://weather-web-anya.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Anya/Weather-App',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Weather-App/main/public/file_0000000051a882089c60b2276f48972c.jpg',
+  },
+  {
+    title: 'Chiku Tube',
+    description: 'A distraction-free, AI-powered video discovery app with no infinite scroll and no autoplay traps.',
+    tags: ['TypeScript', 'YouTube API'],
+    liveUrl: 'https://chiku-tube.vercel.app',
+    sourceUrl: 'https://github.com/Itz-Anya/Chiku-Tube',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Chiku-Tube/main/public/file_0000000068b4820898879604d111f68f.jpg',
+  },
+  {
+    title: 'Anime Hub',
+    description: 'Browse trending, seasonal and top-rated anime, search the catalog and keep a local watchlist.',
+    tags: ['React', 'TypeScript'],
+    liveUrl: 'https://anya-anime-hub.vercel.app',
+    sourceUrl: 'https://github.com/Itz-Anya/Anime-Hub',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Anime-Hub/main/public/file-00000000c1147207ab7733ed4f6ac96f.jpg',
+  },
+  {
+    title: 'Manga Hub',
+    description: 'A modern manga reader for discovering and reading your favourite manga.',
+    tags: ['TypeScript', 'Reader'],
+    liveUrl: 'https://anya-manga-hub.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Anya/Manga-Hub',
+    isPrivate: false,
+    image: 'https://anya-file-host.vercel.app/cznc5nha4b',
+  },
+  {
+    title: 'Space Atlas',
+    description: 'A free, open-source atlas of the observable universe, built entirely on the web.',
+    tags: ['Svelte', 'Data Viz'],
+    liveUrl: 'https://spaceatlas.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Anya/Space-Atlas',
+    isPrivate: false,
+    image: 'https://anya-file-host.vercel.app/xg21f43ybm',
+  },
+  {
+    title: 'Anya File Hosting Web',
+    description: 'A fast, minimal file and image hosting service built on Next.js, Cloudflare D1, and a clean short-link API.',
+    tags: ['TypeScript', 'API', 'Cloudflare'],
+    liveUrl: 'https://anya-file-host.vercel.app/',
+    sourceUrl: '',
+    isPrivate: true,
+    image: 'https://anya-file-host.vercel.app/o42ywwvug1',
+  },
+  {
+    title: 'Anya Music Web',
+    description: 'Premium themed music streaming web app built with Next.js 14, TypeScript, Tailwind CSS, Framer Motion, Zustand, and TanStack Query. Powered by the Saavnx API.',
+    tags: ['TypeScript', 'SaavnxApi'],
+    liveUrl: 'https://anya-music-web.vercel.app/',
+    sourceUrl: '',
+    isPrivate: true,
+    image: 'https://anya-file-host.vercel.app/d2k01s320w',
+  },
+  {
+    title: 'SaavnxApi',
+    description: 'Unofficial JioSaavn REST API. Node.js and Express on the backend, Vite and React on the frontend, bundled for Vercel serverless.',
+    tags: ['TypeScript', 'Next.js'],
+    liveUrl: 'https://saavnx.vercel.app/',
+    sourceUrl: '',
+    isPrivate: true,
+    image: 'https://anya-file-host.vercel.app/84mi4r4xoj',
+  },
 ];
 
 const AllProjects = () => {
@@ -301,3 +373,4 @@ const AllProjects = () => {
 };
 
 export default AllProjects;
+
