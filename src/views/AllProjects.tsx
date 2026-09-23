@@ -158,6 +158,33 @@ const allProjects = [
     isPrivate: true,
     image: 'https://anya-file-host.vercel.app/84mi4r4xoj',
   },
+  {
+    title: 'Color Pallet',
+    description: 'A fast, open-source color toolkit for developers and designers. Explore colors, build palettes and gradients, convert formats and check contrast. Runs entirely in your browser.',
+    tags: ['React', 'Tailwindcss', 'Lucide icons'],
+    liveUrl: 'https://devcolors.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Murali/Color-Pallet',
+    isPrivate: false,
+    image: 'https://files.catbox.moe/66547c.png',
+  },
+  {
+    title: 'Social Downloader',
+    description: 'Social Downloader is a single-page React app built around one idea: one field should be enough. Drop in a YouTube link, an Instagram reel, a Pinterest pin, or just plain search words, and the app detects the platform automatically and resolves the original file: video, audio, or image, with no account, no queue, and no watermark tax.',
+    tags: ['React', 'Vercel', 'Anya Apis'],
+    liveUrl: 'https://social-fetch.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Murali/Social-Downloader-Web',
+    isPrivate: false,
+    image: 'https://files.catbox.moe/tt4on4.png',
+  },
+  {
+    title: 'Code Quote',
+    description: 'CodeQuote renders a random programming quote as a self-contained SVG card on every request. Drop one image tag into your README and it just works no JavaScript, no database, no account.',
+    tags: ['Javascript', 'Vercel'],
+    liveUrl: 'https://codequote.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Anya/Code-Quote',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Code-Quote/main/public/og-image.jpg',
+  },
 ];
 
 const AllProjects = () => {
@@ -373,4 +400,3 @@ const AllProjects = () => {
 };
 
 export default AllProjects;
-
