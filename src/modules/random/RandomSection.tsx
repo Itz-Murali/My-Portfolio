@@ -21,9 +21,7 @@ const RandomSection = () => {
       
         
         <div className="colorful-card p-5 text-center">
-          <h3 className="text-2xl font-display text-foreground mb-3">
-            Random Quote
-          </h3>
+          
           <div className="flex justify-center">
             <img
               src={quoteUrl}
