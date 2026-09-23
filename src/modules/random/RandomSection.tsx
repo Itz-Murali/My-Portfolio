@@ -2,7 +2,7 @@ import useScrollAnimation from '@/utils/hooks/useScrollAnimation';
 
 const RandomSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  const gifUrl = `https://itz-murali-images.vercel.app/gif?t=${Date.now()}`;
+//  const gifUrl = `https://itz-murali-images.vercel.app/gif?t=${Date.now()}`;
   const quoteUrl = `https://codequote.vercel.app/api/quote.svg?theme=rosepine`;
 
   return (
