@@ -185,6 +185,15 @@ const allProjects = [
     isPrivate: false,
     image: 'https://raw.githubusercontent.com/Itz-Anya/Code-Quote/main/public/og-image.jpg',
   },
+  {
+    title: 'Github Stats Svg',
+    description: 'GitHub Stats is an open-source SVG card API you can embed anywhere GitHub READMEs, personal sites, portfolios, and more. It fetches live data from the GitHub API, renders it into a beautiful card, and returns a pure SVG you can drop into any Markdown image tag.',
+    tags: ['TypeScript', 'Vercel', 'Github Api'],
+    liveUrl: 'https://anya-github-stats.vercel.app/',
+    sourceUrl: 'https://github.com/Itz-Anya/Github-Stats',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/public/file_000000003b20820899cd1557953562e9.jpg',
+  },
 ];
 
 const AllProjects = () => {
