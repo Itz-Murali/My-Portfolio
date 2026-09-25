@@ -99,15 +99,6 @@ const allProjects = [
     image: 'https://files.catbox.moe/ntdxvn.jpg',
   },
   {
-    title: 'Neko Image Generator',
-    description: 'Your ultimate source for adorable neko images! Instantly generate and explore a collection of cute and stylish neko artwork.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://TheMeowClub.github.io/Neko/',
-    sourceUrl: 'https://github.com/TheMeowClub/Neko',
-    isPrivate: false,
-    image: 'https://files.catbox.moe/b8f9zj.jpg',
-  },
-  {
     title: 'Suzume Movie Fan Page',
     description: 'A tribute to Makoto Shinkai\'s breathtaking masterpiece, celebrating the beauty, emotion, and adventure of Suzume no Tojimari.',
     tags: ['HTML', 'CSS', 'JavaScript'],
@@ -231,7 +222,7 @@ const allProjects = [
     liveUrl: 'https://anya-github-stats.vercel.app/',
     sourceUrl: 'https://github.com/Itz-Anya/Github-Stats',
     isPrivate: false,
-    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/public/file_000000003b20820899cd1557953562e9.jpg',
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/main/public/file_000000003b20820899cd1557953562e9.jpg',
   },
 ];
 
