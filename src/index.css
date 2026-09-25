@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 30% 97%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 330 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 175 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 262 83% 58%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --coral: 16 85% 65%;
+    --lavender: 262 60% 70%;
+    --mint: 160 50% 55%;
+    --sky: 200 85% 60%;
+    --peach: 30 90% 70%;
+    --rose: 340 75% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)));
+    --gradient-cool: linear-gradient(135deg, hsl(var(--sky)), hsl(var(--mint)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
+
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 8px 30px hsl(var(--primary) / 0.15);
+
+    /* Font families */
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-code: 'Fira Code', monospace;
+    --font-script: 'Satisfy', cursive;
+    --font-elegant: 'Lora', serif;
+    --font-heading: 'Josefin Sans', sans-serif;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 10% 15%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 95%;
+    --sidebar-accent-foreground: 240 10% 15%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 230 25% 5%;
+    --foreground: 45 30% 95%;
+
+    --card: 230 20% 10%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 230 20% 10%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 280 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 20% 15%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 170 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 230 20% 18%;
+    --input: 230 20% 12%;
+    --ring: 280 70% 60%;
+
+    --coral: 15 75% 55%;
+    --lavender: 280 50% 60%;
+    --mint: 165 50% 45%;
+    --sky: 195 75% 50%;
+    --peach: 35 80% 60%;
+    --rose: 345 65% 55%;
+
+    --gradient-card: linear-gradient(145deg, hsl(230 20% 12%), hsl(230 20% 8%));
+
+    --sidebar-background: 230 25% 5%;
+    --sidebar-foreground: 45 30% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html.theme-transition,
+  html.theme-transition body,
+  html.theme-transition *:not(svg):not(path) {
+    transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  code {
+    font-family: var(--font-code);
+  }
+
+  p {
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .colorful-card {
+    @apply bg-card rounded-2xl border border-border shadow-lg;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .colorful-card:hover {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-sm border border-border rounded-2xl;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%,
+      hsl(var(--muted)) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  /* Scroll animations - fade in only */
+  .scroll-fade-up,
+  .scroll-slide-left,
+  .scroll-slide-right,
+  .scroll-scale,
+  .scroll-rotate {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-fade-up.visible,
+  .scroll-slide-left.visible,
+  .scroll-slide-right.visible,
+  .scroll-scale.visible,
+  .scroll-rotate.visible {
+    opacity: 1;
+  }
+
+  /* Scale animation for profile */
+  .profile-scale-in {
+    animation: profileScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes profileScale {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .font-display-alt {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--primary) / 0.8), hsl(var(--secondary) / 0.8));
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
