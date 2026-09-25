@@ -1,8 +1,47 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ExternalLink, Github, Lock, Search, Sparkles, Code2, Rocket } from 'lucide-react';
+import {
+  ArrowLeft, ExternalLink, Github, Lock, Search, Sparkles, Code2, Rocket,
+  Database, Webhook, BookOpen, BarChart3, Palette, Music, Server,
+} from 'lucide-react';
+import {
+  SiTypescript, SiJavascript, SiHtml5, SiCss3, SiReact, SiVercel,
+  SiTailwindcss, SiSvelte, SiCloudflare, SiNextdotjs, SiGithub,
+  SiSupabase, SiYoutube,
+} from 'react-icons/si';
 import AnimatedBackground from '@/core/effects/AnimatedBackground';
+
+const TECH_ICON_MAP: Record<string, { icon: React.ComponentType<{ size?: number; className?: string }>; color: string }> = {
+  typescript: { icon: SiTypescript, color: '#3178C6' },
+  javascript: { icon: SiJavascript, color: '#F7DF1E' },
+  html: { icon: SiHtml5, color: '#E34F26' },
+  css: { icon: SiCss3, color: '#1572B6' },
+  js: { icon: SiJavascript, color: '#F7DF1E' },
+  react: { icon: SiReact, color: '#61DAFB' },
+  vercel: { icon: SiVercel, color: '#ffffff' },
+  tailwindcss: { icon: SiTailwindcss, color: '#06B6D4' },
+  svelte: { icon: SiSvelte, color: '#FF3E00' },
+  cloudflare: { icon: SiCloudflare, color: '#F38020' },
+  'next.js': { icon: SiNextdotjs, color: '#ffffff' },
+  github: { icon: SiGithub, color: '#ffffff' },
+  'github api': { icon: SiGithub, color: '#ffffff' },
+  supabase: { icon: SiSupabase, color: '#3FCF8E' },
+  'youtube api': { icon: SiYoutube, color: '#FF0000' },
+  sql: { icon: Database, color: '#4479A1' },
+  api: { icon: Webhook, color: '#a3a3a3' },
+  ai: { icon: Sparkles, color: '#f0abfc' },
+  reader: { icon: BookOpen, color: '#a3a3a3' },
+  'data viz': { icon: BarChart3, color: '#a3a3a3' },
+  ui: { icon: Palette, color: '#a3a3a3' },
+  'lucide icons': { icon: Palette, color: '#a3a3a3' },
+  'anya apis': { icon: Server, color: '#a3a3a3' },
+  saavnxapi: { icon: Music, color: '#1ED760' },
+};
+
+function getTechIcon(tag: string) {
+  return TECH_ICON_MAP[tag.trim().toLowerCase()] ?? { icon: Code2, color: '#a3a3a3' };
+}
 
 const allProjects = [
   {
@@ -25,7 +64,7 @@ const allProjects = [
   },
   {
     title: 'Elaina AI ChatBot',
-    description: 'Meet Elaina AI — a graceful and intelligent chatbot inspired by the magic of journeys and stories. Designed to understand you like a companion.',
+    description: 'Meet Elaina AI, a graceful and intelligent chatbot inspired by the magic of journeys and stories. Designed to understand you like a companion.',
     tags: ['TypeScript'],
     liveUrl: 'https://t.me/ElainaOpBot',
     sourceUrl: 'https://github.com/Itz-Murali/Elaina-Ai',
@@ -192,7 +231,7 @@ const allProjects = [
     liveUrl: 'https://anya-github-stats.vercel.app/',
     sourceUrl: 'https://github.com/Itz-Anya/Github-Stats',
     isPrivate: false,
-    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/main/public/file_000000003b20820899cd1557953562e9.jpg',
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/public/file_000000003b20820899cd1557953562e9.jpg',
   },
 ];
 
@@ -288,19 +327,23 @@ const AllProjects = () => {
             </div>
 
             <div className="flex flex-wrap gap-2 justify-center">
-              {allTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => setActiveTag(tag)}
-                  className={`px-3 py-1.5 text-xs font-code rounded-full border transition-all ${
-                    activeTag === tag
-                      ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground border-transparent shadow-lg scale-105'
-                      : 'bg-card/40 border-border/50 text-muted-foreground hover:border-primary/40 hover:text-primary'
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
+              {allTags.map((tag) => {
+                const { icon: TechIcon, color } = getTechIcon(tag);
+                return (
+                  <button
+                    key={tag}
+                    onClick={() => setActiveTag(tag)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code rounded-full border transition-all ${
+                      activeTag === tag
+                        ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground border-transparent shadow-lg scale-105'
+                        : 'bg-card/40 border-border/50 text-muted-foreground hover:border-primary/40 hover:text-primary'
+                    }`}
+                  >
+                    {tag !== 'All' && <TechIcon size={12} style={{ color: activeTag === tag ? 'currentColor' : color }} />}
+                    {tag}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -344,14 +387,18 @@ const AllProjects = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-xs font-code rounded-full bg-primary/10 text-primary border border-primary/20"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      {project.tags.slice(0, 3).map((tag) => {
+                        const { icon: TechIcon, color } = getTechIcon(tag);
+                        return (
+                          <span
+                            key={tag}
+                            className="flex items-center gap-1.5 px-2 py-1 text-xs font-code rounded-full bg-primary/10 text-primary border border-primary/20"
+                          >
+                            <TechIcon size={12} style={{ color }} />
+                            {tag}
+                          </span>
+                        );
+                      })}
                       {project.tags.length > 3 && (
                         <span className="px-2 py-1 text-xs font-code rounded-full bg-muted text-muted-foreground">
                           +{project.tags.length - 3}
