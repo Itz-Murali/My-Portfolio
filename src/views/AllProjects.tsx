@@ -192,7 +192,7 @@ const allProjects = [
     liveUrl: 'https://anya-github-stats.vercel.app/',
     sourceUrl: 'https://github.com/Itz-Anya/Github-Stats',
     isPrivate: false,
-    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/public/file_000000003b20820899cd1557953562e9.jpg',
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/main/public/file_000000003b20820899cd1557953562e9.jpg',
   },
 ];
 
@@ -326,7 +326,6 @@ const AllProjects = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                     {project.isPrivate && (
                       <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-background/80 backdrop-blur-md border border-border/60">
                         <Lock size={10} className="text-coral" />
@@ -409,3 +408,4 @@ const AllProjects = () => {
 };
 
 export default AllProjects;
+
