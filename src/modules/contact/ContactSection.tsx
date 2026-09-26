@@ -6,7 +6,7 @@ const socialLinks = [
   { name: 'Email', icon: Mail, url: 'mailto:Itz-Murali@outlook.com', color: '#ea4335' },
   { name: 'GitHub', icon: Github, url: 'https://github.com/Itz-Murali', color: '#6e5494' },
   { name: 'CodePen', icon: Code, url: 'https://codepen.io/MysticalDevs', color: '#47cf73' },
-  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/Murali.Techno', color: '#E1306C' },
+  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/itz.murali._1', color: '#E1306C' },
 ];
 
 const ContactSection = () => {
