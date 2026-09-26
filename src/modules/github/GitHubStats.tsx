@@ -44,7 +44,7 @@ const GitHubStats = () => {
             </h3>
             <div className="rounded-lg overflow-hidden bg-background/50 border border-border/50 group-hover:border-primary/30 transition-colors duration-300 flex justify-center">
               <img
-                src="https://anya-github-stats.vercel.app/api/stats?username=Itz-Murali&theme=neon_dreams&border_radius=14&hide=prs%2Cissues%2Creviews%2Cgists%2Cwatchers"
+                src="https://anya-github-stats.vercel.app/api/stats?username=Itz-Murali&theme=aurora&border_radius=14&hide=prs%2Cissues%2Creviews%2Cgists%2Cwatchers"
                 alt="GitHub Overview Stats"
                 className="w-full h-auto max-w-full"
                 loading="lazy"
