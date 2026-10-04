@@ -224,6 +224,15 @@ const allProjects = [
     isPrivate: false,
     image: 'https://raw.githubusercontent.com/Itz-Anya/Github-Stats/main/public/file_000000003b20820899cd1557953562e9.jpg',
   },
+  {
+    title: 'Image Size Reducer Web',
+    description: 'Image Size Reducer is a free, open-source image compression tool built to make image optimization simple, fast, and accessible. It allows users to reduce image file sizes directly in their browsers while maintaining control over quality and output settings.',
+    tags: ['TypeScript', 'Vercel', 'Svelte'],
+    liveUrl: 'https://img-size-reducer.vercel.app/',
+    repoUrl: 'https://github.com/Itz-Anya/Image-Size-Reducer',
+    isPrivate: false,
+    image: 'https://raw.githubusercontent.com/Itz-Anya/Image-Size-Reducer/main/static/preview.png',
+  },
 ];
 
 const AllProjects = () => {
