@@ -251,6 +251,14 @@ const allProjects = [
     liveUrl: 'https://nebulon-frontier.vercel.app/',
     sourceUrl: 'https://github.com/Itz-Murali/Nebulon',
   },
+  {
+    title: 'Aevora Mail',
+    description: 'Aevora Mail is a temporary email provider website.. ', 
+    image: 'https://aevora-mail.vercel.app/og-image.jpg',
+    tags: ['TypeScript', 'Vercel', 'Vite'],
+    isPrivate: true,
+    liveUrl: 'https://aevora-mail.vercel.app/',
+  },
 ];
 
 const AllProjects = () => {
