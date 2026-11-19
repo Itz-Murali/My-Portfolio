@@ -1,13 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-interface ScrollAnimationOptions {
-  threshold?: number;
-  rootMargin?: string;
-  triggerOnce?: boolean;
-}
-
-export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
-  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
+const useScrollAnimation = (threshold = 0.1) => {
   const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,20 +12,15 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (triggerOnce) {
-            observer.unobserve(element);
-          }
-        } else if (!triggerOnce) {
-          setIsVisible(false);
+          observer.disconnect();
         }
       },
-      { threshold, rootMargin }
+      { threshold }
     );
 
     observer.observe(element);
-
     return () => observer.disconnect();
-  }, [threshold, rootMargin, triggerOnce]);
+  }, [threshold]);
 
   return { ref, isVisible };
 };

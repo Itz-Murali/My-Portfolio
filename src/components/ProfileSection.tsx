@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { Skeleton } from '@/core/ui/skeleton';
 
 const mainImage = '/main.png';
 
@@ -12,7 +11,7 @@ const ProfileSection = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const fullText = "Developer • Creator • Innovator";
-  
+
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -26,8 +25,6 @@ const ProfileSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // The <img> is server-rendered, so it may finish (or fail) loading before React attaches
-  // onLoad / onError. Sync with its real state once mounted.
   useEffect(() => {
     const img = imgRef.current;
     if (img && img.complete) {
@@ -62,12 +59,11 @@ const ProfileSection = () => {
 
   return (
     <section className="flex flex-col items-center justify-center px-4 pt-8 pb-6 relative">
-      
       <div className="relative mb-4 profile-scale-in" style={{ animationDelay: '0.1s' }}>
         <div className="absolute -inset-5 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-40 blur-xl" />
         <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-card shadow-2xl">
           {!imageLoaded && (
-            <Skeleton className="w-full h-full rounded-full absolute inset-0" />
+            <div className="absolute inset-0 rounded-full bg-muted animate-pulse" />
           )}
           <img
             ref={imgRef}
@@ -81,12 +77,10 @@ const ProfileSection = () => {
         </div>
       </div>
 
-      
       <h1 className="text-6xl md:text-8xl font-display font-normal mb-2 text-gradient tracking-wide profile-scale-in" style={{ animationDelay: '0.3s' }}>
         Murali
       </h1>
 
-      
       <div className="h-8">
         <p className="text-lg md:text-xl font-code text-muted-foreground tracking-wider">
           {typedText}

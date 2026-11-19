@@ -24,9 +24,7 @@ const ThemeToggle = () => {
     root.classList.toggle('dark', newIsDark);
     localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
 
-    window.setTimeout(() => {
-      root.classList.remove('theme-transition');
-    }, 300);
+    window.setTimeout(() => root.classList.remove('theme-transition'), 300);
   };
 
   return (

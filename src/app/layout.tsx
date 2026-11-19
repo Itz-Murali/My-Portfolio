@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
-import Providers from '@/core/providers/Providers';
-import ThemeToggle from '@/core/theme/ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 import {
   SITE_URL,
   SITE_NAME,
@@ -10,7 +9,7 @@ import {
   DESCRIPTION,
   OG_DESCRIPTION,
   OG_IMAGE,
-} from '@/utils/seo';
+} from '@/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,12 +44,6 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/main.png', type: 'image/png' }],
     apple: '/main.png',
   },
-  other: {
-    title: TITLE,
-    language: 'English',
-    'revisit-after': '7 days',
-    'twitter:url': `${SITE_URL}/`,
-  },
 };
 
 export const viewport: Viewport = {
@@ -73,7 +66,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Murali Portfolio" />
@@ -81,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;500;600;700&family=Satisfy&family=Fira+Code:wght@400;500;600&family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;500;600;700&family=Satisfy&family=Fira+Code:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
 
@@ -91,10 +83,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <Providers>
-          <ThemeToggle />
-          {children}
-        </Providers>
+        <ThemeToggle />
+        {children}
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, Github, Send, Instagram, Code } from 'lucide-react';
-import useScrollAnimation from '@/utils/hooks/useScrollAnimation';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const socialLinks = [
   { name: 'Telegram', icon: Send, url: 'https://t.me/ChikuBots', color: '#0088cc' },
@@ -12,14 +12,13 @@ const socialLinks = [
 ];
 
 const ContactSection = () => {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section 
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`py-20 px-4 md:px-8 max-w-4xl mx-auto scroll-rotate ${isVisible ? 'visible' : ''}`}
+    <section
+      ref={ref}
+      className={`py-20 px-4 md:px-8 max-w-4xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
     >
-      
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-display text-gradient mb-4">
           Contact Me
@@ -31,23 +30,18 @@ const ContactSection = () => {
         </p>
       </div>
 
-      
       <div className="flex flex-wrap justify-center gap-6">
-        {socialLinks.map((link, index) => (
+        {socialLinks.map((link) => (
           <a
             key={link.name}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative"
-            style={{ animationDelay: `${index * 100}ms` }}
           >
             <div
-              className="w-16 h-16 md:w-18 md:h-18 rounded-2xl flex items-center justify-center
+              className="w-16 h-16 rounded-2xl flex items-center justify-center
                          colorful-card hover:scale-110 transition-all duration-300"
-              style={{
-                '--hover-color': link.color,
-              } as React.CSSProperties}
             >
               <link.icon
                 size={26}
@@ -55,9 +49,8 @@ const ContactSection = () => {
                 style={{ color: link.color }}
               />
             </div>
-            
-            
-            <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-body font-medium 
+
+            <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-body font-medium
                            text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               {link.name}
             </span>
@@ -65,7 +58,6 @@ const ContactSection = () => {
         ))}
       </div>
 
-      
       <div className="mt-16 text-center">
         <p className="text-2xl font-script tracking-wide text-muted-foreground">
           Let's build something{' '}

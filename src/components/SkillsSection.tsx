@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import useScrollAnimation from '@/utils/hooks/useScrollAnimation';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const skills = [
   { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: '#3776AB', desc: 'AI, Web, Automation' },
@@ -20,14 +20,13 @@ const skills = [
 
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
+  const { ref, isVisible } = useScrollAnimation(0.15);
 
   return (
-    <section 
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`py-20 px-4 md:px-8 max-w-5xl mx-auto scroll-fade-up ${isVisible ? 'visible' : ''}`}
+    <section
+      ref={ref}
+      className={`py-20 px-4 md:px-8 max-w-5xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
     >
-      
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-display text-gradient mb-4">
           My Skills
@@ -38,7 +37,6 @@ const SkillsSection = () => {
         </p>
       </div>
 
-      
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
         {skills.map((skill, index) => (
           <div
@@ -46,13 +44,13 @@ const SkillsSection = () => {
             className="group relative"
             onMouseEnter={() => setHoveredSkill(skill.name)}
             onMouseLeave={() => setHoveredSkill(null)}
-            style={{ 
+            style={{
               transitionDelay: `${index * 50}ms`,
             }}
           >
-            <div className="colorful-card p-4 flex flex-col items-center gap-3 cursor-pointer 
+            <div className="colorful-card p-4 flex flex-col items-center gap-3 cursor-pointer
                           hover:scale-105 transition-all duration-300">
-              <div 
+              <div
                 className="relative w-10 h-10 md:w-12 md:h-12 transition-all duration-300"
                 style={{ filter: hoveredSkill === skill.name ? `drop-shadow(0 0 12px ${skill.color})` : 'none' }}
               >
@@ -67,14 +65,13 @@ const SkillsSection = () => {
               </span>
             </div>
 
-            
-            <div className={`absolute -top-14 left-1/2 -translate-x-1/2 px-3 py-2 rounded-lg 
+            <div className={`absolute -top-14 left-1/2 -translate-x-1/2 px-3 py-2 rounded-lg
                             bg-card border border-border shadow-lg z-20
                             transition-opacity duration-200 whitespace-nowrap
                             ${hoveredSkill === skill.name ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
               <p className="text-xs font-code font-semibold" style={{ color: skill.color }}>{skill.name}</p>
               <p className="text-xs text-muted-foreground font-body">{skill.desc}</p>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
                             w-2 h-2 bg-card border-r border-b border-border rotate-45" />
             </div>
           </div>

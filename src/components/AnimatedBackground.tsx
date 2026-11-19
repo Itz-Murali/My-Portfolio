@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface Star {
   id: number;
@@ -29,18 +29,18 @@ const AnimatedBackground = () => {
       setIsDark(dark);
       setTimeout(() => setShowDark(dark), 50);
     };
-    
+
     checkDarkMode();
-    
+
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    
+
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (starsRef.current.length > 0) return; // Already initialized
-    
+    if (starsRef.current.length > 0) return;
+
     starsRef.current = Array.from({ length: 90 }, (_, i) => {
       const angle = Math.random() * Math.PI * 2;
       return {
@@ -76,7 +76,7 @@ const AnimatedBackground = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       ctx.fillStyle = 'rgb(8, 8, 20)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -149,17 +149,16 @@ const AnimatedBackground = () => {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      
-      <div 
+      <div
         className="absolute inset-0 transition-opacity ease-in-out"
-        style={{ 
+        style={{
           opacity: showDark ? 0 : 1,
           transitionDuration: '1000ms',
           pointerEvents: showDark ? 'none' : 'auto'
         }}
       >
-        
-        <div 
+
+        <div
           className="absolute inset-0"
           style={{
             background: `
@@ -171,11 +170,10 @@ const AnimatedBackground = () => {
             `,
           }}
         />
-        
-        
-        <div 
-          className="absolute w-[500px] h-[500px] rounded-full opacity-40 blur-3xl animate-pulse"
-          style={{ 
+
+        <div
+          className="absolute w-[500px] h-[500px] rounded-full opacity-40 blur-3xl"
+          style={{
             background: 'radial-gradient(circle, hsl(330 80% 80%), transparent 70%)',
             top: '-10%',
             left: '-5%',
@@ -183,9 +181,9 @@ const AnimatedBackground = () => {
             animation: 'float 20s ease-in-out infinite',
           }}
         />
-        <div 
+        <div
           className="absolute w-[400px] h-[400px] rounded-full opacity-30 blur-3xl"
-          style={{ 
+          style={{
             background: 'radial-gradient(circle, hsl(180 70% 75%), transparent 70%)',
             top: '30%',
             right: '-10%',
@@ -193,9 +191,9 @@ const AnimatedBackground = () => {
             animation: 'float 25s ease-in-out infinite reverse',
           }}
         />
-        <div 
+        <div
           className="absolute w-[350px] h-[350px] rounded-full opacity-35 blur-3xl"
-          style={{ 
+          style={{
             background: 'radial-gradient(circle, hsl(45 90% 80%), transparent 70%)',
             bottom: '10%',
             left: '20%',
@@ -203,9 +201,9 @@ const AnimatedBackground = () => {
             animation: 'float 18s ease-in-out infinite',
           }}
         />
-        <div 
+        <div
           className="absolute w-[300px] h-[300px] rounded-full opacity-25 blur-3xl"
-          style={{ 
+          style={{
             background: 'radial-gradient(circle, hsl(280 70% 85%), transparent 70%)',
             top: '60%',
             right: '25%',
@@ -213,26 +211,17 @@ const AnimatedBackground = () => {
             animation: 'float 22s ease-in-out infinite reverse',
           }}
         />
-
-        <style>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.05); }
-          }
-        `}</style>
       </div>
 
-      
-      <div 
+      <div
         className="absolute inset-0 transition-opacity ease-in-out"
-        style={{ 
+        style={{
           opacity: showDark ? 1 : 0,
           transitionDuration: '1000ms',
           pointerEvents: showDark ? 'auto' : 'none'
         }}
       >
-        
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: `
@@ -242,15 +231,13 @@ const AnimatedBackground = () => {
             `,
           }}
         />
-        
-        
+
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
         />
 
-        
-        <div 
+        <div
           className="absolute w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
           style={{
             background: 'radial-gradient(circle, hsl(260 40% 30%), transparent 70%)',
@@ -258,8 +245,8 @@ const AnimatedBackground = () => {
             left: '-5%',
           }}
         />
-        <div 
-          className="absolute w-[500px] h-[500px] rounded-full opacity-8 blur-3xl pointer-events-none"
+        <div
+          className="absolute w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
           style={{
             background: 'radial-gradient(circle, hsl(200 35% 25%), transparent 70%)',
             bottom: '-10%',

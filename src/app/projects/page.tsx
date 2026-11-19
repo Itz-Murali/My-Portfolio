@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AllProjects from '@/views/AllProjects';
+import AllProjects from '@/components/AllProjects';
 
 export const metadata: Metadata = {
   title: 'Projects | Murali Portfolio',

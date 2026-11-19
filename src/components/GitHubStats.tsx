@@ -1,22 +1,22 @@
 'use client';
 
-import useScrollAnimation from '@/utils/hooks/useScrollAnimation';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 import { Github, Eye, Trophy } from 'lucide-react';
 
 const GitHubStats = () => {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
     <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-8 max-w-5xl mx-auto scroll-fade-up ${isVisible ? 'visible' : ''}`}
+      ref={ref}
+      className={`py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-8 max-w-5xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
     >
       <div className="text-center mb-8 sm:mb-10 md:mb-12">
         <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 group cursor-default">
           <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/20 group-hover:border-primary/40 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
             <Github className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-primary" />
           </div>
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-display text-gradient">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display text-gradient">
             GitHub Stats
           </h2>
         </div>
@@ -65,7 +65,7 @@ const GitHubStats = () => {
             Trophies
             <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-coral group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300" />
           </h3>
-          <div className="flex justify-center overflow-x-auto scrollbar-thin rounded-lg border border-border/50 group-hover:border-coral/30 transition-colors duration-300 bg-background/50 p-2">
+          <div className="flex justify-center overflow-x-auto rounded-lg border border-border/50 group-hover:border-coral/30 transition-colors duration-300 bg-background/50 p-2">
             <img
               src="https://github-trophies.vercel.app/?username=Itz-Murali&theme=radical&no-frame=false&no-bg=false&margin-w=4"
               alt="GitHub Trophies"
